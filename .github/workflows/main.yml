@@ -25,8 +25,12 @@ jobs:
           pip install playwright google-auth google-auth-httplib2 google-api-python-client
           playwright install chromium
 
+
       - name: Run combined automation script
         env:
+          LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
           GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
         run: python main.py
+
