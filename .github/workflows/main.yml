@@ -3,7 +3,7 @@ name: Daily Leave Report Upload to Google Drive
 on:
   schedule:
     # 17:15 UTC = 1:15 AM MYT
-    - cron: "0 17 * * *"
+    - cron: "15 17 * * *"
   workflow_dispatch:
 
 jobs:
